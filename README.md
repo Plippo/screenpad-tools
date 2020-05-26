@@ -1,7 +1,7 @@
 # screenpad-tools
 This repository contains a very simple script to control the brightness of the ASUS Screenpad Plus on the ASUS ZenBook Duo laptops.
 
-To install it:
+To install and use it:
 1. Install the [patched kernel module using dkms, as described here](https://github.com/Plippo/asus-wmi-screenpad) (for kernel 5.4)
 2. It is important that you have added the line `sudo chmod a+w '/sys/class/leds/asus::screenpad/brightness'` to your `/etc/rc.local` file so that you can use the script without sudo.
 3. download the script to your /usr/bin folder and make it executable:
