@@ -6,7 +6,7 @@ current=$(((value + 1) / 32 + 1))
 choice=$1
 
 case "$1" in
-up) 
+up)
    choice=$((current + 1))
 ;;
 down)
@@ -18,7 +18,7 @@ down)
 esac
 
 case "$choice" in
-0) echo 0 > '/sys/class/leds/asus::screenpad/brightness' ;;
+0) echo 1 > '/sys/class/leds/asus::screenpad/brightness' ;;
 1) echo 4 > '/sys/class/leds/asus::screenpad/brightness' ;;
 2) echo 31 > '/sys/class/leds/asus::screenpad/brightness' ;;
 3) echo 63 > '/sys/class/leds/asus::screenpad/brightness' ;;
@@ -28,6 +28,7 @@ case "$choice" in
 7) echo 191 > '/sys/class/leds/asus::screenpad/brightness' ;;
 8) echo 223 > '/sys/class/leds/asus::screenpad/brightness' ;;
 9) echo 255 > '/sys/class/leds/asus::screenpad/brightness' ;;
+off) echo 0 > '/sys/class/leds/asus::screenpad/brightness' ;;
 toggle)
    if [ $value = 0 ] ; then
      echo 255 > '/sys/class/leds/asus::screenpad/brightness'
@@ -37,11 +38,10 @@ toggle)
 ;;
 *)
    echo 'Usage:'
-   echo '  screenpad 0       Turn ScreenPad off'
-   echo '  screenpad N       Turn ScreenPad on and set brightness (N = 1...9)'
-   echo '  screenpad toggle  Toggle between 0 and 9'
+   echo '  screenpad off     Turn ScreenPad off'
+   echo '  screenpad N       Turn ScreenPad on and set brightness (N = 0...9)'
+   echo '  screenpad toggle  Toggle between off and 9'
    echo '  screenpad up      Increase brightness'
    echo '  screenpad down    Decrease brightness'
 ;;
 esac
-
