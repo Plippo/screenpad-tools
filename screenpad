@@ -1,7 +1,10 @@
 #!/bin/sh
 
 value=`cat '/sys/class/leds/asus::screenpad/brightness'`
-current=$(((value + 1) / 32 + 1))
+current=$(((value +1) / 32 + 1))
+if [ $value = 1 ]; then
+    current=0
+fi
 
 choice=$1
 
@@ -11,9 +14,6 @@ up)
 ;;
 down)
    choice=$((current - 1))
-   if [ $choice = 0 ] ; then
-     choice=nothing
-   fi
 ;;
 esac
 
