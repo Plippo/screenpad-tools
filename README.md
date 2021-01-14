@@ -18,3 +18,5 @@ To install and use it:
    - `screenpad down` to decrease the brightness one step
    - `screenpad toggle` to toggle the ScreenPad between on and off.
 5. To facilitate using the script, you can define shortcut keys using the means of your desktop environment. E.g. GNOME has a tool to set shortcuts under Settings > Shortcuts. Add a new command and set the shortcut you like. For instance, I set Windows+F4 to `/usr/bin/screenpad down` to decrease the brightness and Windows+F5 to `/usr/bin/screenpad up` to increase it. So just as you control the brightness of the main screen using Fn+F4/F5 you can now control the brightness of the ScreenPad using Windows+F4/F5. I also set the key next to the On/Off key to `screenpad toggle` so I can turn it on and off using that key, just like under windows.
+
+For users of the Asus ScreenPad **Pro** Duo (e.g. UX581), where the main screen consists of an OLED panel, there is a tool that can be used in conjunction with this one to control the brightness of the main screen. You find information about this tool here: https://github.com/Plippo/screenpad-tools/issues/4#issuecomment-759747114
